@@ -1,0 +1,74 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "install-dependencies",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"install"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "fix-prisma-install",
+			"type": "shell",
+			"command": "rm",
+			"args": [
+				"-rf",
+				"node_modules/prisma",
+				"node_modules/.prisma*",
+				"package-lock.json"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "npm-install-clean",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"install"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "prisma-generate",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"prisma:generate"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "lint-project",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"lint"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "build-project",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "inspect-product-images",
+			"type": "shell",
+			"command": "file",
+			"args": [
+				"public/products/*"
+			],
+			"isBackground": false
+		}
+	]
+}
